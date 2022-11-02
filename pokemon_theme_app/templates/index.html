@@ -1,0 +1,24 @@
+<head>
+    <script src="static/js/main.js"></script>
+</head>
+
+
+<body>
+    <p> Random Pokemon </p>
+    <input id='input' value='slakoth'>
+    <button onclick="search()">search</button>
+    
+    {% if image %}
+        <h3>{{base_pokemon_name}}</h3>
+        <p> <img src="{{image}}"></p>
+        <h4>Type: {{ base_type_name }} </h4>
+        <h6>Pokemon that are the same type:</h6>
+            <ul>
+            {% for i, pokemon in random_names %}
+            <li>{{ i }}<a></li><img src="{{pokemon}}"></a>
+        {% endfor %}
+            </ul>
+    {%else%}    
+        <p> Image not found </p>
+    {%endif%}
+</body>
